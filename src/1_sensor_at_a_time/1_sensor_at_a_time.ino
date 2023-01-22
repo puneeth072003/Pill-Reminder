@@ -44,10 +44,7 @@ void setup() {// begin the hardware setup part
     timeClient.begin();                 //beginning the Time client
               
 }
-
-
-
-
+/*Above part is like a declaration of stuffs*/
 
 void loop() {  
          
@@ -68,10 +65,10 @@ Serial.println(timeClient.getSeconds());
 /*  These Statments mentioned above Prints the current time and day in the Serial monitor */        
             
           v1=digitalRead(s1);       //This line instructs the Sensors read the state usually sensors read "1" when there is an obstracle and "0" when nothing is present
-          delay(10);
+          delay(10);                //This delay is necessary because sometimes the sensors reads the input too fast so it takes the same value twice in order to avoid that delay is introduced to improve the accuracy of the model
           v2=digitalRead(s1);       //This line instructs the Sensors read the state once again to improve the Accuracy
             
-            if ((timeClient.getHours())== 3 &&(timeClient.getMinutes())== 04)    // Set the time at which sensors should start reading for changes 
+            if ((timeClient.getHours())== 3 &&(timeClient.getMinutes())== 04)    // Set the TIME at which sensors should start reading for changes 
              /*You can Switch ON the Sensors multiple times a day just by repeating the above sub-routine*/
                  {
                     if(v1==0&&v2==1||v1==1&&v2==0)          //checking whether the Medicine is taken or not
