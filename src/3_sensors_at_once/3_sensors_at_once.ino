@@ -71,14 +71,18 @@ Serial.print(":");
 Serial.println(timeClient.getSeconds());
 /*  These Statments mentioned above Prints the current time and day in the Serial monitor */        
             
-          v1=digitalRead(s1);       //This line instructs the Sensors read the state usually sensors read "1" when there is an obstracle and "0" when nothing is present
+          v1=digitalRead(s1); //This line instructs the Sensors read the state usually sensors read "1" when there is an obstracle and "0" when nothing is present
+          v3=digitalRead(s2);
+          v5=digitalRead(s3);
           delay(10);
           v2=digitalRead(s1);       //This line instructs the Sensors read the state once again to improve the Accuracy
+          v4=digitalRead(s2);
+          v6=digitalRead(s3);
             
             if ((timeClient.getHours())== 3 &&(timeClient.getMinutes())== 04)    // Set the time at which sensors should start reading for changes 
              /*You can Switch ON the Sensors multiple times a day just by repeating the above sub-routine*/
                  {
-                    if(v1==0&&v2==1||v1==1&&v2==0)  //checking whether the Medicine is taken or not
+                    if(v1==0&&v2==1||v1==1&&v2==0||v3==0&&v4==1||v3==1&&v4==0||v6==0&&v5==1||v6==1&&v5==0)  //checking whether the Medicine is taken or not
                     {
                         String url = "Your_Url_Obtained_from_following README.md Steps";      //Note there are changes to be made here
               
