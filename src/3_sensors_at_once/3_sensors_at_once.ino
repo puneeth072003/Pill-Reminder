@@ -71,10 +71,10 @@ Serial.print(":");
 Serial.println(timeClient.getSeconds());
 /*  These Statments mentioned above Prints the current time and day in the Serial monitor */        
             
-          v1=digitalRead(s1); //This line instructs the Sensors read the state usually sensors read "1" when there is an obstracle and "0" when nothing is present
+          v1=digitalRead(s1);        //This line instructs the Sensors read the state usually sensors read "1" when there is an obstracle and "0" when nothing is present
           v3=digitalRead(s2);
           v5=digitalRead(s3);
-          delay(10);
+          delay(10);                //This delay is nessary because sometimes the sensors read the input too fast so it takes the same value twice this is done to improve the accuracy of the model
           v2=digitalRead(s1);       //This line instructs the Sensors read the state once again to improve the Accuracy
           v4=digitalRead(s2);
           v6=digitalRead(s3);
@@ -93,9 +93,8 @@ Serial.println(timeClient.getSeconds());
                                         "Host: " + host + "\r\n" +   
                                                "Connection: close\r\n\r\n");  //this Triggers the Web-hook
                     }
-                    
                   }  
-               delay(10);
+               delay(10);              //this delay is to improve the accuracy of the model
            
       
 }
