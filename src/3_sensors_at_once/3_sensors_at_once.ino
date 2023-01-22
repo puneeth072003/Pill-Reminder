@@ -50,25 +50,20 @@ void setup() {// begin the hardware setup part
 }
 
 
-
-
-
 void loop() {  
-         
-      
-      
-           WiFiClient client;             //Declaring the WiFi Client
-           const int httpPort = 80;       //Assigning a httpPort
+    
+            WiFiClient client;             //Declaring the WiFi Client
+            const int httpPort = 80;       //Assigning a httpPort
 
-   timeClient.update();                   //updating the TimeClient
+            timeClient.update();                   //updating the TimeClient
 
-Serial.print(daysOfTheWeek[timeClient.getDay()]);
-Serial.print(", ");
-Serial.print(timeClient.getHours());
-Serial.print(":");
-Serial.print(timeClient.getMinutes());
-Serial.print(":");
-Serial.println(timeClient.getSeconds());
+            Serial.print(daysOfTheWeek[timeClient.getDay()]);
+            Serial.print(", ");
+            Serial.print(timeClient.getHours());
+            Serial.print(":");
+            Serial.print(timeClient.getMinutes());
+            Serial.print(":");
+            Serial.println(timeClient.getSeconds());
 /*  These Statments mentioned above Prints the current time and day in the Serial monitor */        
             
           v1=digitalRead(s1);        //This line instructs the Sensors read the state usually sensors read "1" when there is an obstracle and "0" when nothing is present
